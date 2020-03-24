@@ -1,51 +1,27 @@
-// interface IVehicule {
-//     marque: string
-//     couleur: string
-// }
+import Good from './classes/good'
+import Bad from './classes/bad';
+import Fight from './classes/fight'
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+  
 
-// class Voiture implements IVehicule{
-//     // variables d'instance
-//     private _marque: string;
-//     private _couleur: string;
-
-//     // variables de classe
-//     private static _nbDeVoiture: number;
-
-//     //constructeur
-//     constructor(marque = "", couleur = "") {
-//         this._marque = marque
-//         this._couleur = couleur
-//         Voiture._nbDeVoiture += 1
-//     }
-
-//     // getters/setters
-//     get marque() {
-//         return this._marque
-//     }
-
-//     set marque(marque: string) {
-//         this._marque = marque
-//     }
-
-//     get couleur() {
-//         return this._couleur
-//     }
-
-//     set couleur(couleur: string) {
-//         this._couleur = couleur
-//     }
-
-//     //méthodes d'instance
-//     rouler = (vitesse: number) => {
-//         console.log(`je roule à ${vitesse} km/h`)
-//     }
-// }
-
-// class VoitureDeSport extends Voiture{
-//     private _supervitesse: number
-
-//     constructor(marque = "", couleur = "", superVitesse= 400){
-//         super(marque, couleur)
-//         this._supervitesse = superVitesse
-//     }
-// }
+rl.question('Name your hero : ', (answer:string) => {
+      let good = new Good(answer)
+      console.log(good);
+      let bad = new Bad()
+      console.log(bad);
+    rl.close();
+    let fight = new Fight(good, bad)
+    console.log(fight.start);
+    
+  });
+  
+// let good = new Good('pierre')
+// console.log(good.name);
+// console.log(good.pv);
+// console.log(good.pvMax);
+// let bad = new Bad()
+// console.log(bad.name);

@@ -1,46 +1,55 @@
+import Weapon from "./weapon"
+
 class Character{
     private _name: string
-    private _pv: number
-    private _pvMax: number
-    private _defense: number
+    private _pv: number = Math.floor(Math.random() * 100 + 100)
+    private _pvMax: number = this._pv
+    private _defense: number = Math.floor(Math.random() * 100 + 80)
+    private _weapon: Weapon
 
-    constructor(name = "") {
+    constructor(name:string = "") {
                 this._name = name
-                this._pv = Math.floor(Math.random() * 100 + 100)
-                this._pvMax = Math.floor(Math.random() * 100 + 100)
-                this._defense = Math.floor(Math.random() * 100 + 100)
+                this._weapon = new Weapon()
             }
 
-            get name() {
+            get name():string {
                 return this._name
             }
 
-            set name(name) {
+            set name(name:string) {
                 this._name = name
             }
 
-            get pv() {
+            get pv():number {
                 return this._pv
             }
 
-            set pv(pv) {
+            set pv(pv:number) {
                 this._pv = pv
             }
 
-            get pvMax() {
+            get pvMax():number {
                 return this._pvMax
             }
 
-            set pvMax(pvMax) {
+            set pvMax(pvMax:number) {
                 this._pvMax = pvMax
             }
 
-            get defense() {
+            get defense():number {
                 return this._defense
             }
 
-            set defense(defense) {
+            set defense(defense:number) {
                 this._defense = defense
+            }
+
+            get weapon():Weapon {
+                return this._weapon
+            }
+
+            set weapon(weapon:Weapon) {
+                this._weapon = weapon
             }
 }
 
