@@ -10,6 +10,7 @@ export default class Fight {
     constructor(good:Good, bad:Bad) {
         this._good = good
         this._bad = bad
+        this.fight()
     }
 
     get start():boolean {
@@ -37,12 +38,19 @@ export default class Fight {
     }
 
     fight = () => {
-        while (this.good.pv != 0 && this.bad.pv != 0) {
+        while (this.good.pv > 0 && this.bad.pv > 0) {
             if (this.start === true) {
                 new Run(this.good, this.bad)
+                this.start = false
             } else {
                 new Run(this.bad, this.good)
+                this.start = true
             }
+        }
+        if (this.start === false) {
+            console.log(this.good.name + " est KO");
+        } else {
+            console.log(this.bad.name + " est KO");
         }
     }
 }

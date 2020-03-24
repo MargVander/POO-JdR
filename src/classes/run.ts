@@ -6,7 +6,7 @@ export default class Run{
 
     constructor(target:Character, attacker:Character) {
         this._target = target
-        this._attacker = attacker
+        this._attacker = attacker        
         this.hit()
     }
 
@@ -28,7 +28,9 @@ export default class Run{
 
     hit = ():Character => {
         const damagePts = Math.floor(Math.random() * this.attacker.weapon.minDamage + this.attacker.weapon.maxDamage)
-        this.target.pv = this.target.pv - (damagePts + this.target.defense)
+        this.target.pv = this.target.pv - (damagePts - this.target.defense)
+        console.log(this.attacker.name + " cause " + (damagePts - this.target.defense) + " dégat à son adversaire");
+        console.log(this.target.name + " n'a plus que " + this.target.pv + " pv")
         return this.target
     }
 }

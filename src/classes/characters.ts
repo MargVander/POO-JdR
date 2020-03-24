@@ -2,9 +2,9 @@ import Weapon from "./weapon"
 
 class Character{
     private _name: string
-    private _pv: number = Math.floor(Math.random() * 100 + 100)
+    private _pv: number = Math.floor(Math.random() * 200 + 300)
     private _pvMax: number = this._pv
-    private _defense: number = Math.floor(Math.random() * 100 + 80)
+    private _defense: number = Math.floor(Math.random() * 80)
     private _weapon: Weapon
 
     constructor(name:string = "") {
@@ -25,7 +25,11 @@ class Character{
             }
 
             set pv(pv:number) {
-                this._pv = pv
+                if (pv >= 0) {
+                    this._pv = pv
+                } else {
+                    this._pv = 0
+                }
             }
 
             get pvMax():number {

@@ -14,14 +14,5 @@ rl.question('Name your hero : ', (answer:string) => {
       let bad = new Bad()
       console.log(bad);
     rl.close();
-    let fight = new Fight(good, bad)
-    console.log(fight.start);
-    
+    new Fight(good, bad)
   });
-  
-// let good = new Good('pierre')
-// console.log(good.name);
-// console.log(good.pv);
-// console.log(good.pvMax);
-// let bad = new Bad()
-// console.log(bad.name);
