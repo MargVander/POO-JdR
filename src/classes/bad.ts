@@ -1,6 +1,6 @@
 import Character from './characters'
 
-class Bad extends Character{
+export default class Bad extends Character{
     constructor(name:string = ""){
         super(name)
         this.name = this.randomName()        
@@ -12,5 +12,3 @@ class Bad extends Character{
     }
     // Methode de création de nom aléatoire
 }
-
-export default Bad

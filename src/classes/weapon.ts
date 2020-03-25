@@ -1,7 +1,7 @@
 export default class Weapon{
-    private _minDamage: number = Math.floor(Math.random() * 200)
-    private _maxDamage: number = this._minDamage + Math.floor(Math.random() * 10)
-    private _criticalHit: number = Math.floor(Math.random() * 10)
+     _minDamage: number = Math.floor(Math.random() * 80 + 20)
+     _maxDamage: number = this._minDamage + Math.floor(Math.random() * 10)
+     _criticalHit: number = Math.random() * 25
 
     get minDamage():number {
         return this._minDamage

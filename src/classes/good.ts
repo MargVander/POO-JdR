@@ -1,8 +1,10 @@
 import Character from './characters'
+import Weapon from './weapon'
 
-class Good extends Character{
-    constructor(name = ''){
+export default class Good extends Character{
+    constructor(name = '', weapon:Weapon){
         super(name)
+        this.weapon = weapon
     }
 
     heal = () => {
@@ -14,5 +16,3 @@ class Good extends Character{
         }
     }
 }
-
-export default Good

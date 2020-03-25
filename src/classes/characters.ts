@@ -1,10 +1,10 @@
 import Weapon from "./weapon"
 
-class Character{
+export default class Character{
     private _name: string
     private _pv: number = Math.floor(Math.random() * 200 + 300)
     private _pvMax: number = this._pv
-    private _defense: number = Math.floor(Math.random() * 80)
+    private _defense: number = Math.floor(Math.random() * 20)
     private _weapon: Weapon
 
     constructor(name:string = "") {
@@ -56,5 +56,3 @@ class Character{
                 this._weapon = weapon
             }
 }
-
-export default Character
